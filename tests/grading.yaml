@@ -10,38 +10,58 @@ assignment:
 checks:
   - id: instantiate
     name: "Agent Instantiation"
-    points: 20
+    points: 15
     type: instantiate
     file: solution/agent.py
   - id: swml_valid
     name: "SWML Generation"
-    points: 20
+    points: 15
     type: swml_valid
     file: solution/agent.py
-  - id: func_store
-    name: "store_data function"
-    points: 30
+  - id: has_global_data
+    name: "Global Data Configured"
+    points: 15
+    type: swml_contains
+    file: solution/agent.py
+    require:
+      - text: "global_data"
+  - id: func_identify
+    name: "identify_customer function"
+    points: 15
     type: function_exists
     file: solution/agent.py
-    function: store_data
-  - id: func_retrieve
-    name: "retrieve_data function"
-    points: 30
+    function: identify_customer
+  - id: func_create_ticket
+    name: "create_ticket function"
+    points: 20
     type: function_exists
     file: solution/agent.py
-    function: retrieve_data
+    function: create_ticket
+  - id: func_get_summary
+    name: "get_ticket_summary function"
+    points: 20
+    type: function_exists
+    file: solution/agent.py
+    function: get_ticket_summary
 
 feedback:
   pass: |
     Excellent work! You've completed Lab 2.6: State Management.
 
+    You've learned how to:
+    - Set up global data for shared configuration
+    - Use update_global_data() to persist state across calls
+    - Track customer and ticket information throughout a conversation
+
     **Next steps:**
-    - Review the concepts covered
-    - Continue to the next lab
+    - Continue to Lab 2.7: Call Recording
 
   fail: |
     Some checks didn't pass. Review the requirements and try again.
 
     **Tips:**
+    - Use self.set_global_data() for initial configuration
+    - Use .update_global_data() on SwaigFunctionResult to modify state
+    - Access state via raw_data.get("global_data", {})
     - Run `swaig-test solution/agent.py --list-tools` to verify functions
     - Run `swaig-test solution/agent.py --dump-swml` to check SWML

@@ -49,10 +49,12 @@ git push
 
 | Check | Points |
 |-------|--------|
-| Agent Instantiation | 20 |
-| SWML Generation | 20 |
-| store_data function | 30 |
-| retrieve_data function | 30 |
+| Agent Instantiation | 15 |
+| SWML Generation | 15 |
+| Global Data Configured | 15 |
+| identify_customer function | 15 |
+| create_ticket function | 20 |
+| get_ticket_summary function | 20 |
 | **Total** | **100** |
 
 **Passing Score:** 70%
