@@ -63,4 +63,10 @@ See `reference/starter.py` for a boilerplate template.
 
 ---
 
+## Next Assignment
+
+Ready to continue? [**Start Lab 2.7: Call Recording**](https://classroom.github.com/a/vQmId_pO)
+
+---
+
 *SignalWire AI Agents Certification*
